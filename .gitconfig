@@ -1,0 +1,9 @@
+[user]
+	name = David Ellis
+	email = d.f.ellis@ieee.org
+[color]
+	ui = auto
+[push]
+	default = matching
+[core]
+	editor = vim
