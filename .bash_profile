@@ -195,8 +195,6 @@ fi
 
 export WORKON_HOME=~/.virtualenvs  # Note that you can make WORKON_HOME whatever folder you like to keep your virtualenvs in.
 
-alias ls="ls -G"
-
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
