@@ -26,6 +26,9 @@ set expandtab
 set softtabstop=4
 set nofoldenable
 
+" show tabs and other non-printable characters all the time
+"set list
+
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
@@ -38,7 +41,10 @@ augroup filetype
 augroup END
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:EclimCompletionMethod = 'omnifunc'
 
 let g:vim_json_syntax_conceal = 0
 let &t_Co=256
 hi SpellBad    ctermfg=015      ctermbg=052     cterm=none
+
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl set ft=glsl
