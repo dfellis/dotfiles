@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/damocles/uber/dispatch/mayflower'
-let g:netrw_dirhist_2='/home/damocles/uber/dispatch/mayflower/lib'
-let g:netrw_dirhist_3='/home/damocles/uber/dispatch/server/x/clients'
-let g:netrw_dirhist_4='/home/damocles/uber/dispatch'
-let g:netrw_dirhist_5='/home/damocles/uber/dispatch/server'
-let g:netrw_dirhist_6='/home/damocles/uber/dispatch/server/x'
-let g:netrw_dirhist_7='/home/damocles/uber/dispatch/server/x/clients'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/damocles/oss/lambda-js'
+let g:netrw_dirhist_2='/home/damocles/oss/lambda-js/lib'
+let g:netrw_dirhist_3='/home/damocles/private/dotfiles/.vim/eclim/plugin'
+let g:netrw_dirhist_4='/home/damocles/cardash/cardash/node_modules'

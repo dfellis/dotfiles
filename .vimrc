@@ -41,6 +41,8 @@ augroup filetype
 augroup END
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:EclimJavascriptLintEnabled = 0
+let g:EclimJavascriptValidate = 0 
 let g:EclimCompletionMethod = 'omnifunc'
 
 let g:vim_json_syntax_conceal = 0
@@ -48,3 +50,14 @@ let &t_Co=256
 hi SpellBad    ctermfg=015      ctermbg=052     cterm=none
 
 au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl set ft=glsl
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = '~/cardash/cardash/node_modules/.bin/eslint'
