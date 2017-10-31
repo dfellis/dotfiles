@@ -18,20 +18,20 @@ set number
 " for the web the default will cause http headers to be sent. that's bad.
 set binary noeol
 
-" 4 spaces = tab, auto-intent new block scopes, make backspace not stupid
+" 2 spaces = tab, auto-intent new block scopes, make backspace not stupid
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 set nofoldenable
+set colorcolumn=100
 
 " show tabs and other non-printable characters all the time
 "set list
 
 augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+    au! BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
 autocmd BufNewFile,BufRead *.json set ft=json
