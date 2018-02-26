@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/damocles/oss/lambda-js'
-let g:netrw_dirhist_2='/home/damocles/oss/lambda-js/lib'
-let g:netrw_dirhist_3='/home/damocles/private/dotfiles/.vim/eclim/plugin'
-let g:netrw_dirhist_4='/home/damocles/cardash/cardash/node_modules'
