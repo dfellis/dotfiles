@@ -77,7 +77,7 @@ function set_git_branch {
 	if [[ ${git_status} =~ ${remote_pattern} ]]; then
 		if [[ ${BASH_REMATCH[1]} == "ahead of" ]]; then
 			remote="^"
-    elif [[ ${BASH_REMATCH[1]} == "up-to-date with" ]]; then
+    elif [[ ${BASH_REMATCH[1]} == "up to date with" ]]; then
       remote=""
 		else
 			remote="v"
@@ -126,20 +126,25 @@ function set_bash_prompt () {
 	# Set the bash prompt variable.
 	PS1="${GREEN}\u@\h${COLOR_NONE}:${BLUE}\w${COLOR_NONE}${BRANCH}${PROMPT_SYMBOL} "
 }
-
 # Tell bash to execute this function just before displaying its prompt.
 PROMPT_COMMAND=set_bash_prompt
 
-unset color_prompt force_color_prompt
+# Loosely based on commands from: https://unix.stackexchange.com/questions/104018/set-dynamic-window-title-based-on-command-input?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+function settitle() {
+  if [ "$BASH_COMMAND" = "set_bash_prompt" ]; then
+    git_status="$(git status 2> /dev/null)"
+    branch_pattern="^On branch ([^${IFS}]*)"
+    if [[ ${git_status} =~ ${branch_pattern} ]]; then
+      branch=${BASH_REMATCH[1]}
+    fi
+    echo -ne "\033]0;$(whoami)@$(hostname):${PWD/*\//}(${branch})\007"
+  else
+    echo -ne "\033]0;${BASH_COMMAND}\007"
+  fi
+}
+trap 'settitle' DEBUG
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-	xterm*|rxvt*)
-		PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-		;;
-	*)
-		;;
-esac
+unset color_prompt force_color_prompt
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

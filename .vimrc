@@ -5,9 +5,6 @@ set backspace=2
 " set auto-indenting on for programming
 set ai
 
-" turn on the "visual bell" - which is much quieter than the "audio blink"
-set vb
-
 " automatically show matching brackets. works like it does in bbedit.
 set showmatch
 
