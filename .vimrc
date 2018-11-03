@@ -33,8 +33,12 @@ augroup END
 
 autocmd BufNewFile,BufRead *.json set ft=json
 
-augroup filetype
+augroup llvm
     au! BufRead,BufNewFile *.ll     set filetype=llvm
+augroup END
+
+augroup seq
+    au! BufRead,BufNewFile *.seq,*.seqdiag set filetype=dot
 augroup END
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -57,4 +61,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = '~/cardash/cardash/node_modules/.bin/eslint'
+" let g:syntastic_javascript_eslint_exec = '/usr/local/cardash/pass-prototype-flow/node_modules/.bin/eslint'
+let g:syntastic_javascript_eslint_exec = system('bash -c "echo $(npm bin)/eslint"')[:-2]
