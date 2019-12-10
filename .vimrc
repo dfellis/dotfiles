@@ -63,3 +63,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_eslint_exec = '/usr/local/cardash/pass-prototype-flow/node_modules/.bin/eslint'
 let g:syntastic_javascript_eslint_exec = system('bash -c "echo $(npm bin)/eslint"')[:-2]
+
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
