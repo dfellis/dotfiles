@@ -31,3 +31,9 @@
 [submodule ".vim/bundle/vim-puppet"]
 	path = .vim/bundle/vim-puppet
 	url = git@github.com:rodjek/vim-puppet.git
+[submodule ".vim/bundle/vim-alan"]
+	path = .vim/bundle/vim-alan
+	url = git@github.com:alantech/vim-alan
+[submodule ".vim/bundle/vim-antlr"]
+	path = .vim/bundle/vim-antlr
+	url = git@github.com:dylon/vim-antlr
