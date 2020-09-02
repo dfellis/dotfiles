@@ -7,3 +7,5 @@
 	default = matching
 [core]
 	editor = vim
+[init]
+	defaultBranch = main

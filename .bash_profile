@@ -158,6 +158,9 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-if [ "$TERM" == "xterm-256color" ]; then
-    setxkbmap -option caps:swapescape
-fi
+# Disabled as I found the Gnome Tweak that does this for me
+# if [ "$TERM" == "xterm-256color" ]; then
+#   setxkbmap -option caps:swapescape
+#fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
