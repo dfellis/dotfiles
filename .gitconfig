@@ -9,3 +9,5 @@
 	editor = vim
 [init]
 	defaultBranch = main
+[pull]
+	ff = only
