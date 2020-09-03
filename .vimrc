@@ -43,8 +43,8 @@ augroup END
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:EclimJavascriptLintEnabled = 0
-let g:EclimJavascriptValidate = 0 
-let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimJavascriptValidate = 0
+" let g:EclimCompletionMethod = 'omnifunc'
 
 let g:vim_json_syntax_conceal = 0
 let &t_Co=256
@@ -66,3 +66,9 @@ let g:syntastic_javascript_eslint_exec = system('bash -c "echo $(npm bin)/eslint
 
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+
+call asyncomplete#register_source(asyncomplete#sources#tscompletejob#get_source_options({
+    \ 'name': 'tscompletejob',
+    \ 'whitelist': ['typescript'],
+    \ 'completor': function('asyncomplete#sources#tscompletejob#completor'),
+    \ }))

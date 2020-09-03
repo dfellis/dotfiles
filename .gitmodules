@@ -37,3 +37,27 @@
 [submodule ".vim/bundle/vim-antlr"]
 	path = .vim/bundle/vim-antlr
 	url = git@github.com:dylon/vim-antlr
+[submodule ".vim/bundle/async.vim"]
+	path = .vim/bundle/async.vim
+	url = git@github.com:prabirshrestha/async.vim
+[submodule ".vim/bundle/asyncomplete-lsp.vim"]
+	path = .vim/bundle/asyncomplete-lsp.vim
+	url = git@github.com:prabirshrestha/asyncomplete-lsp.vim
+[submodule ".vim/bundle/asyncomplete-tscompletejob.vim"]
+	path = .vim/bundle/asyncomplete-tscompletejob.vim
+	url = git@github.com:prabirshrestha/asyncomplete-tscompletejob.vim
+[submodule ".vim/bundle/asyncomplete.vim"]
+	path = .vim/bundle/asyncomplete.vim
+	url = git@github.com:prabirshrestha/asyncomplete.vim
+[submodule ".vim/bundle/tscompletejob"]
+	path = .vim/bundle/tscompletejob
+	url = git@github.com:runoshun/tscompletejob
+[submodule ".vim/bundle/typescript-vim"]
+	path = .vim/bundle/typescript-vim
+	url = git@github.com:/leafgarland/typescript-vim
+[submodule ".vim/bundle/vim-lsp-settings"]
+	path = .vim/bundle/vim-lsp-settings
+	url = git@github.com:mattn/vim-lsp-settings
+[submodule ".vim/bundle/vim-lsp"]
+	path = .vim/bundle/vim-lsp
+	url = git@github.com:prabirshrestha/vim-lsp
