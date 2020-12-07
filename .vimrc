@@ -41,6 +41,11 @@ augroup seq
     au! BufRead,BufNewFile *.seq,*.seqdiag set filetype=dot
 augroup END
 
+augroup rust
+    au! BufNewFile,BufRead *.rs set tabstop=2
+    au! BufNewFile,BufRead *.rs set shiftwidth=2
+augroup END
+
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:EclimJavascriptLintEnabled = 0
 let g:EclimJavascriptValidate = 0

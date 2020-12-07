@@ -164,3 +164,5 @@ fi
 #fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export ALAN_TELEMETRY_OFF="true"

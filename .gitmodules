@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/jshint.vim"]
 	path = .vim/bundle/jshint.vim
 	url = git@github.com:wookiehangover/jshint.vim.git
-[submodule ".vim/bundle/llvm.vim"]
-	path = .vim/bundle/llvm.vim
-	url = git@github.com:Superbil/llvm.vim.git
 [submodule ".vim/bundle/jedi-vim"]
 	path = .vim/bundle/jedi-vim
 	url = git@github.com:davidhalter/jedi-vim
@@ -54,7 +51,7 @@
 	url = git@github.com:runoshun/tscompletejob
 [submodule ".vim/bundle/typescript-vim"]
 	path = .vim/bundle/typescript-vim
-	url = git@github.com:/leafgarland/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim
 [submodule ".vim/bundle/vim-lsp-settings"]
 	path = .vim/bundle/vim-lsp-settings
 	url = git@github.com:mattn/vim-lsp-settings
