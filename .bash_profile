@@ -131,6 +131,10 @@ PROMPT_COMMAND=set_bash_prompt
 
 # Loosely based on commands from: https://unix.stackexchange.com/questions/104018/set-dynamic-window-title-based-on-command-input?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 function settitle() {
+  # Don’t let terminal/session integration hooks overwrite the title
+  case "$BASH_COMMAND" in
+    __vte_*|__systemd_* ) return ;;
+  esac
   if [ "$BASH_COMMAND" = "set_bash_prompt" ]; then
     git_status="$(git status 2> /dev/null)"
     branch_pattern="^On branch ([^${IFS}]*)"
@@ -165,4 +169,20 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export ALAN_TELEMETRY_OFF="true"
+# User specific environment and startup programs
+. "$HOME/.cargo/env"
+
+# Env vars I don't want to commit
+. ~/.bash_profile.private
+
+# >>> Android SDK / Expo (managed by setup) >>>
+export JAVA_HOME=/usr/lib/jvm/java-17-temurin-jdk
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+# <<< Android SDK / Expo (managed by setup) <<<
+
+# Android emulator helpers
+alias android-emulator-start='systemctl --user start android-emulator.service'
+alias android-emulator-stop='systemctl --user stop android-emulator.service'
+alias android-emulator-status='systemctl --user status android-emulator.service --no-pager'
